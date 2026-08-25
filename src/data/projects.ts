@@ -1,0 +1,108 @@
+import type { Project } from "@/utils/models";
+
+export const projects: Project[] = [
+  {
+    id: "queue-away",
+    name: "Queue Away",
+    slug: "queue-away",
+    description:
+      "Real-time queue management and appointment booking platform with live wait times and WebSocket updates.",
+    techStack: ["Node.js", "Express", "Socket.io", "React", "Supabase"],
+    metrics: ["8 DB tables", "WebSocket rooms", "10+ REST endpoints"],
+    color: "#ff6600",
+    demoUrl: "https://github.com/nikunj-kohli/Queue-Away",
+    githubUrl: "https://github.com/nikunj-kohli/Queue-Away",
+    position: { x: 16, z: -5 },
+  },
+  {
+    id: "gossip-hub",
+    name: "Gossip Hub",
+    slug: "gossip-hub",
+    description:
+      "Real-time social chat platform with rooms, reactions, and live presence indicators.",
+    techStack: ["React", "Socket.io", "Node.js", "MongoDB", "Redis"],
+    metrics: ["Real-time messaging", "Room-based chat", "Presence system"],
+    color: "#9333ea",
+    demoUrl: "https://github.com/nikunj-kohli",
+    githubUrl: "https://github.com/nikunj-kohli",
+    position: { x: 20, z: -5 },
+  },
+  {
+    id: "zelcor-vault",
+    name: "Zelcor Vault",
+    slug: "zelcor-vault",
+    description:
+      "Blockchain-powered asset vault with secure transactions and on-chain verification.",
+    techStack: ["Solidity", "Web3.js", "React", "Hardhat", "IPFS"],
+    metrics: ["Smart contracts", "On-chain storage", "Wallet integration"],
+    color: "#fbbf24",
+    demoUrl: "https://github.com/nikunj-kohli",
+    githubUrl: "https://github.com/nikunj-kohli",
+    position: { x: 24, z: -5 },
+  },
+  {
+    id: "unify-campus",
+    name: "Unify Campus",
+    slug: "unify-campus",
+    description:
+      "Campus management platform connecting students, faculty, and events in one unified hub.",
+    techStack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind"],
+    metrics: ["Role-based access", "Event scheduling", "Student portal"],
+    color: "#22c55e",
+    demoUrl: "https://github.com/nikunj-kohli",
+    githubUrl: "https://github.com/nikunj-kohli",
+    position: { x: 28, z: -5 },
+  },
+  {
+    id: "duel-arena",
+    name: "Duel Arena",
+    slug: "duel-arena",
+    description:
+      "Competitive coding battle platform with live duels, leaderboards, and real-time scoring.",
+    techStack: ["React", "Node.js", "Socket.io", "Monaco Editor", "Redis"],
+    metrics: ["Live code battles", "ELO ranking", "Judge0 integration"],
+    color: "#ef4444",
+    demoUrl: "https://github.com/nikunj-kohli",
+    githubUrl: "https://github.com/nikunj-kohli",
+    position: { x: 16, z: 3 },
+  },
+  {
+    id: "dev-observatory",
+    name: "Dev Observatory",
+    slug: "dev-observatory",
+    description:
+      "This very portfolio — an immersive 3D world built with React Three Fiber and Rapier physics.",
+    techStack: ["Next.js", "Three.js", "R3F", "Rapier", "GSAP"],
+    metrics: ["5 explorable zones", "Physics-based movement", "Interactive UI"],
+    color: "#00f5ff",
+    demoUrl: "https://github.com/nikunj-kohli",
+    githubUrl: "https://github.com/nikunj-kohli",
+    position: { x: 20, z: 3 },
+  },
+  {
+    id: "code-canvas",
+    name: "Code Canvas",
+    slug: "code-canvas",
+    description:
+      "Collaborative whiteboard for developers with live code sharing and diagram tools.",
+    techStack: ["React", "Yjs", "WebRTC", "Excalidraw", "TypeScript"],
+    metrics: ["CRDT sync", "Multiplayer cursors", "Export to SVG"],
+    color: "#ec4899",
+    demoUrl: "https://github.com/nikunj-kohli",
+    githubUrl: "https://github.com/nikunj-kohli",
+    position: { x: 24, z: 3 },
+  },
+  {
+    id: "pulse-analytics",
+    name: "Pulse Analytics",
+    slug: "pulse-analytics",
+    description:
+      "Real-time analytics dashboard with custom metrics, alerts, and beautiful data visualizations.",
+    techStack: ["React", "D3.js", "Node.js", "TimescaleDB", "Grafana"],
+    metrics: ["Live dashboards", "Custom alerts", "Time-series data"],
+    color: "#6366f1",
+    demoUrl: "https://github.com/nikunj-kohli",
+    githubUrl: "https://github.com/nikunj-kohli",
+    position: { x: 28, z: 3 },
+  },
+];
