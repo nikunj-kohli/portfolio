@@ -57,10 +57,12 @@ export function Building({ project, index }: BuildingProps) {
             [-0.55, 0.55].map((wx) => (
               <mesh key={`${row}-${wx}`} position={[wx, 1 + row, 1.11]}>
                 <planeGeometry args={[0.45, 0.45]} />
-                <meshBasicMaterial
-                  color="#ffea00"
+                <meshStandardMaterial
+                  color={project.color}
+                  emissive={project.color}
+                  emissiveIntensity={0.8 + (row % 2) * 0.4}
                   transparent
-                  opacity={0.6 + (row % 2) * 0.2}
+                  opacity={0.7 + (row % 2) * 0.2}
                 />
               </mesh>
             ))
@@ -74,8 +76,6 @@ export function Building({ project, index }: BuildingProps) {
           color="white"
           anchorX="center"
           anchorY="middle"
-          outlineWidth={0.03}
-          outlineColor="#000"
         >
           {project.name}
         </Text>

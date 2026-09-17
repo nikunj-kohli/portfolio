@@ -7,7 +7,6 @@ interface ZoneLabelProps {
   position: [number, number, number];
   fontSize?: number;
   color?: string;
-  outlineColor?: string;
 }
 
 export function ZoneLabel({
@@ -15,7 +14,6 @@ export function ZoneLabel({
   position,
   fontSize = 0.5,
   color = "#ffffff",
-  outlineColor = "#000",
 }: ZoneLabelProps) {
   return (
     <Billboard position={position} follow>
@@ -24,8 +22,6 @@ export function ZoneLabel({
         color={color}
         anchorX="center"
         anchorY="middle"
-        outlineWidth={0.03}
-        outlineColor={outlineColor}
       >
         {children}
       </Text>

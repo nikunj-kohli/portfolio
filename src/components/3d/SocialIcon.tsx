@@ -62,8 +62,6 @@ export function SocialIcon({ id, name, color, position }: SocialIconProps) {
           color="white"
           anchorX="center"
           anchorY="middle"
-          outlineWidth={0.02}
-          outlineColor="#000"
         >
           {name}
         </Text>

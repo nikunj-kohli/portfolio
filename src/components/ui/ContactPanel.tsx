@@ -1,14 +1,13 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Mail, MessageCircle, Gamepad2, Copy, Check, type LucideIcon } from "lucide-react";
+import { X, Mail, Gamepad2, Copy, Check, type LucideIcon } from "lucide-react";
 import { useState } from "react";
 import { useGameStore } from "@/store/gameStore";
 import { cn } from "@/lib/utils";
 
 const iconMap: Record<string, LucideIcon> = {
   mail: Mail,
-  "message-circle": MessageCircle,
   "gamepad-2": Gamepad2,
 };
 

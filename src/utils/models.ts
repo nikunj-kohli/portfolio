@@ -1,4 +1,4 @@
-export type PanelType = "project" | "about" | "contact" | "resume" | null;
+export type PanelType = "project" | "about" | "contact" | "resume" | "customization" | null;
 
 export interface Project {
   id: string;
@@ -8,7 +8,10 @@ export interface Project {
   techStack: string[];
   metrics: string[];
   color: string;
-  demoUrl: string;
+  /** Live deployment / download link. Omit when the project isn't deployed. */
+  demoUrl?: string;
+  /** Label shown on the demo button (e.g. "Download APK"). Defaults to "View Demo". */
+  demoLabel?: string;
   githubUrl: string;
   position: { x: number; z: number };
 }

@@ -11,6 +11,8 @@ import { AboutPanel } from "@/components/ui/AboutPanel";
 import { ContactPanel } from "@/components/ui/ContactPanel";
 import { ResumePanel } from "@/components/ui/ResumePanel";
 import { LoadingScreen } from "@/components/ui/LoadingScreen";
+import { CustomizationPanel } from "@/components/ui/CustomizationPanel";
+import { UnlockNotification } from "@/components/ui/UnlockNotification";
 
 export default function Home() {
   const map = useMemo<KeyboardControlsEntry[]>(
@@ -22,12 +24,14 @@ export default function Home() {
       { name: "shift", keys: ["ShiftLeft", "ShiftRight"] },
       { name: "jump", keys: ["Space"] },
       { name: "interact", keys: ["KeyE"] },
+      { name: "customize", keys: ["KeyC"] },
+      { name: "car", keys: ["KeyF"] },
     ],
     []
   );
 
   return (
-    <main className="relative w-full h-screen overflow-hidden bg-[#1a0a2e]">
+    <main className="relative w-full h-screen overflow-hidden bg-[#1e1040]">
       <LoadingScreen />
 
       <KeyboardControls map={map}>
@@ -41,6 +45,8 @@ export default function Home() {
       <AboutPanel />
       <ContactPanel />
       <ResumePanel />
+      <CustomizationPanel />
+      <UnlockNotification />
     </main>
   );
 }

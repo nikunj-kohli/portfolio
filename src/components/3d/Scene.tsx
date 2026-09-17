@@ -2,11 +2,11 @@
 
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Sky, Stars } from "@react-three/drei";
 import { Physics } from "@react-three/rapier";
 import { Character } from "./Character";
 import { World } from "./World";
 import { InteractionManager } from "./InteractionManager";
+import { CosmicSky } from "./CosmicSky";
 
 function LoadingFallback() {
   return (
@@ -23,28 +23,22 @@ export function Scene() {
       shadows
       camera={{ position: [0, 8, 12], fov: 55 }}
       className="w-full h-screen"
-      gl={{ antialias: true, alpha: false }}
+      gl={{ antialias: false, alpha: false, powerPreference: "high-performance" }}
+      dpr={[1, 2]}
     >
-      <color attach="background" args={["#1a0a2e"]} />
+      <color attach="background" args={["#1e1040"]} />
+      <fog attach="fog" args={["#2a1860", 55, 140]} />
 
-      <fog attach="fog" args={["#16213e", 30, 80]} />
+      <CosmicSky />
 
-      <Sky
-        distance={450000}
-        sunPosition={[0, 0.4, 0]}
-        inclination={0.5}
-        azimuth={0.25}
-        turbidity={8}
-        rayleigh={0.4}
-      />
-      <Stars radius={100} depth={50} count={3000} factor={4} fade speed={1} />
-
-      <ambientLight intensity={0.35} />
+      <ambientLight intensity={0.45} />
+      <hemisphereLight args={["#7c3aed", "#1a4d3a", 0.35]} />
       <directionalLight
         castShadow
         position={[15, 25, 10]}
-        intensity={1.2}
-        shadow-mapSize={[2048, 2048]}
+        intensity={1.05}
+        color="#ffe4c4"
+        shadow-mapSize={[1024, 1024]}
         shadow-camera-far={80}
         shadow-camera-left={-30}
         shadow-camera-right={30}

@@ -92,16 +92,18 @@ export function ProjectPanel() {
                 <GitBranch size={16} />
                 GitHub
               </a>
-              <a
-                href={project.demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-white transition-colors text-sm font-medium"
-                style={{ backgroundColor: project.color }}
-              >
-                <ExternalLink size={16} />
-                View Demo
-              </a>
+              {project.demoUrl && (
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-white transition-colors text-sm font-medium"
+                  style={{ backgroundColor: project.color }}
+                >
+                  <ExternalLink size={16} />
+                  {project.demoLabel ?? "View Demo"}
+                </a>
+              )}
             </div>
           </div>
         </motion.div>

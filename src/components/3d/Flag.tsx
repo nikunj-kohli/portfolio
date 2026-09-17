@@ -80,8 +80,6 @@ export function Flag({ id, label, position, color = "#00f5ff" }: FlagProps) {
           color="white"
           anchorX="center"
           anchorY="middle"
-          outlineWidth={0.02}
-          outlineColor="#000"
         >
           {label}
         </Text>

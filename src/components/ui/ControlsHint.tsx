@@ -7,9 +7,13 @@ const CONTROLS = [
   ["WASD / Arrows", "Move"],
   ["Shift", "Sprint"],
   ["Space", "Jump"],
-  ["Drag", "Look around"],
+  ["Mouse Drag", "Look around"],
   ["E", "Interact / Visit"],
   ["Esc", "Close panel"],
+  ["C", "Customize (when unlocked)"],
+  ["F near car", "Drive (when unlocked)"],
+  ["W/S in car", "Accelerate / Brake & reverse"],
+  ["A/D in car", "Steer"],
 ] as const;
 
 export function ControlsHint() {

@@ -6,6 +6,14 @@ import { useGameStore } from "@/store/gameStore";
 import { about } from "@/data/about";
 import { cn } from "@/lib/utils";
 
+/** Google Drive /view links send X-Frame-Options: SAMEORIGIN and never embed.
+ *  /preview is the embeddable variant. */
+function drivePreviewUrl(url: string): string {
+  const match = url.match(/drive\.google\.com\/file\/d\/([^/]+)/);
+  return match ? `https://drive.google.com/file/d/${match[1]}/preview` : url;
+}
+const RESUME_EMBED_URL = drivePreviewUrl(about.resumeUrl);
+
 export function ResumePanel() {
   const activePanel = useGameStore((s) => s.activePanel);
   const closePanel = useGameStore((s) => s.closePanel);
@@ -66,7 +74,7 @@ export function ResumePanel() {
             </div>
 
             <iframe
-              src={about.resumeUrl}
+              src={RESUME_EMBED_URL}
               title="Nikunj Kohli Resume"
               className="flex-1 w-full bg-white"
             />

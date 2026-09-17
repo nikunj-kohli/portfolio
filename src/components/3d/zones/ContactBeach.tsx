@@ -23,26 +23,32 @@ function PalmTree({ position }: { position: [number, number, number] }) {
 export function ContactBeach() {
   return (
     <group>
-      {/* Path from spawn */}
-      <RigidBody type="fixed" colliders="cuboid" position={[0, -0.02, 14]}>
+      {/* Path from spawn - ends before beach starts */}
+      <RigidBody type="fixed" colliders="cuboid" position={[0, -0.02, 10]}>
         <mesh receiveShadow>
-          <boxGeometry args={[6, 0.08, 28]} />
+          <boxGeometry args={[4, 0.08, 20]} />
           <meshStandardMaterial color="#d4a574" roughness={0.95} />
         </mesh>
       </RigidBody>
 
-      {/* Main beach sand */}
+      {/* Main beach sand - starts after path ends */}
       <RigidBody type="fixed" colliders="cuboid" position={[0, -0.02, 28]}>
         <mesh receiveShadow>
-          <boxGeometry args={[18, 0.08, 12]} />
+          <boxGeometry args={[18, 0.08, 16]} />
           <meshStandardMaterial color="#e9c46a" roughness={0.9} />
         </mesh>
       </RigidBody>
 
-      {/* Water edge */}
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.15, 36]}>
-        <planeGeometry args={[22, 6]} />
-        <meshStandardMaterial color="#0f3460" roughness={0.4} />
+      {/* Water edge (raised above the ground slab so it actually shows) */}
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.08, 39]}>
+        <planeGeometry args={[60, 8]} />
+        <meshStandardMaterial
+          color="#0ea5c9"
+          roughness={0.25}
+          metalness={0.4}
+          emissive="#083344"
+          emissiveIntensity={0.4}
+        />
       </mesh>
 
       <ZoneLabel position={[0, 3, 22]} fontSize={0.55} color="#00f5ff">
